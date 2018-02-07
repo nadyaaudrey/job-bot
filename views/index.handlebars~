@@ -76,6 +76,8 @@
 </div>
 {{/each}}
 
+<p>{{jobs.google_ux.Position}}</p>
+<p>Test</p>
         
     <!-- SCRIPTS -->
     <!-- JQuery -->
