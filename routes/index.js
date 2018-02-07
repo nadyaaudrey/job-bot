@@ -1,8 +1,5 @@
+exports.view = function(req, res) {
+    var jobs = require("../jobs.json");
+    res.render('index', {jobs});
+}
 
-/*
- * GET home page.
- */
-
-exports.view = function(req, res){
-  res.render('index');
-};
