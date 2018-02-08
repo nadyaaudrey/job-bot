@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8">
+	<title>Bookmarks</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job Bot</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -15,18 +14,11 @@
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- Start your project here-->
-    <!--Navbar-->
 <nav class="navbar navbar-dark red lighten-1 mb-4">
 
-    <!-- Navbar brand -->
-     <a class="navbar-brand mx-auto" href="#">Job Bot</a>
-
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23" aria-controls="navbarSupportedContent23"
+<a class="navbar-brand mx-auto" href="#">Bookmarks</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23" aria-controls="navbarSupportedContent23"
         aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon3"><span></span><span></span><span></span><span></span></div></button>
 
     <!-- Collapsible content -->
@@ -34,20 +26,20 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">My Profile</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Bookmarks</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="bookmarks">Bookmarks<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Application History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
+                <a class="nav-link" href="login">Log In</a>
             </li>
         </ul>
         <!-- Links -->
@@ -56,19 +48,11 @@
     <!-- Collapsible content -->
   
 </nav>
-<!--/.Navbar-->
-    <!--Search bar-->
-<div class="input-group md-form form-sm form-2 pl-0" style="margin-top:-24px;">
-    <input class="form-control my-0 py-1 red-border" type="text" placeholder="&ensp;&ensp;Search jobs, positions, etc." aria-label="Search">
-    <span class="input-group-addon red lighten-3" id="basic-addon1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
-</div>
 
-<!--Filter button-->
-<button type="button" style="margin-top:-15px" class="btn btn-red float-right btn-sm">Filter</button>
-<!--Jobs entries-->
-<div style="margin-top:50px">
+<!--Bookmarks entries-->
+<div style="margin-top:20px">
 {{#each jobs}}
-<a href="/job_desc">
+<a href="/bookmark_jobDesc">
 <div class="media border">
     <div class="media-left">
         <img src={{img}} width="100" height="100">
@@ -78,12 +62,13 @@
         <p>{{Company}}</p>
         <p>{{Location}}</p>
     </div>
-    <span class="media-right fa fa-bookmark-o fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
+    <span class="media-right fa fa-bookmark fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
 </div>
 </a>
 {{/each}}
 </div>
-    <!-- SCRIPTS -->
+
+<!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -93,5 +78,4 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
-
 </html>
