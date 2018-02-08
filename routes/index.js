@@ -1,6 +1,5 @@
 exports.view = function(req, res) {
-    //var jobs = require("../jobs.json");
-    //res.render('index', {jobs});
-    res.render('index');
+    var jobs = require("../jobs.json");
+    res.render('index', {jobs});
 }
 
