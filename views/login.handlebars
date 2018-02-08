@@ -34,8 +34,8 @@
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">My Profile</a>
@@ -46,8 +46,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Application History</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login">Log In</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="login">Log In<span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <!-- Links -->
@@ -57,32 +57,54 @@
   
 </nav>
 <!--/.Navbar-->
-    <!--Search bar-->
-<div class="input-group md-form form-sm form-2 pl-0" style="margin-top:-24px;">
-    <input class="form-control my-0 py-1 red-border" type="text" placeholder="&ensp;&ensp;Search jobs, positions, etc." aria-label="Search">
-    <span class="input-group-addon red lighten-3" id="basic-addon1"><i class="fa fa-search text-grey" aria-hidden="true"></i></span>
-</div>
+   <section class="form-elegant">
 
-<!--Filter button-->
-<button type="button" style="margin-top:-15px" class="btn btn-red float-right btn-sm">Filter</button>
-<!--Jobs entries-->
-<div style="margin-top:50px">
-{{#each jobs}}
-<a href="/job_desc">
-<div class="media border">
-	<div class="media-left">
-		<img src={{img}} width="100" height="100">
-	</div>
-	<div class="media-body">
-		<p class="media-heading">{{Position}}</p>
-		<p>{{Company}}</p>
-		<p>{{Location}}</p>
-	</div>
-	<span class="media-right fa fa-bookmark-o fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
-</div>
-</a>
-{{/each}}
-</div>
+    <!--Form without header-->
+    <div class="card">
+
+        <div class="card-body mx-4">
+
+            <!--Header-->
+            <div class="text-center">
+                <h3 class="dark-grey-text mb-5"><strong>Sign in</strong></h3>
+            </div>
+
+            <!--Body-->
+            <div class="md-form">
+                <input type="text" id="Form-email1" class="form-control">
+                <label for="Form-email1">Your email</label>
+            </div>
+
+            <div class="md-form pb-3">
+                <input type="password" id="Form-pass1" class="form-control">
+                <label for="Form-pass1">Your password</label>
+                <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1"> Password?</a></p>
+            </div>
+
+            <div class="text-center mb-3">
+                <button type="button" class="btn red btn-block btn-rounded z-depth-1a">Sign in</button>
+            </div>
+            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
+
+                <div class="row my-3 d-flex justify-content-center">
+                    <!--Facebook-->
+                    <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-facebook blue-text text-center"></i></button>
+                   
+                    <!--Google +-->
+                    <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus blue-text"></i></button>
+                </div>
+
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer mx-5 pt-3 mb-1">
+            <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1"> Sign Up</a></p>
+        </div>
+
+    </div>
+    <!--/Form without header-->
+
+</section>
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
