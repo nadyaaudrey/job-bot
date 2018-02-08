@@ -104,3 +104,9 @@
   max-height: 400px;
   margin: 0 auto;
 }
+
+/*job_desc*/
+.jobContainer{
+  margin-right: 50px;
+  margin-left: 50px;
+}
