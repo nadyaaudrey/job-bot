@@ -15,6 +15,7 @@ var bookmarks = require('./routes/bookmarks');
 var bookmark_jobDesc = require('./routes/bookmark_jobDesc');
 var appHistory = require('./routes/appHistory');
 var appHistory_jobDesc = require('./routes/appHistory_jobDesc');
+var profile = require('./routes/profile');
 // Example route
 // var user = require('./routes/user');
 
@@ -47,6 +48,7 @@ app.get('/bookmarks', bookmarks.view);
 app.get('/bookmark_jobDesc', bookmark_jobDesc.view);
 app.get('/appHistory', appHistory.view);
 app.get('/appHistory_jobDesc', appHistory_jobDesc.view);
+app.get('/profile', profile.view);
 // Example route
 // app.get('/users', user.list);
 
