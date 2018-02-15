@@ -42,7 +42,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/job_desc', job_desc.view);
+app.get('/job_desc/:jobid', job_desc.view);
 app.get('/login', login.view);
 app.get('/bookmarks', bookmarks.view);
 app.get('/bookmark_jobDesc', bookmark_jobDesc.view);

@@ -1,7 +1,0 @@
-exports.view = function(req, res) {
-    var jobs = require("../jobs.json");
-    var str = JSON.stringify(jobs, null, 2);
-    console.log(str);
-    res.render('index', {jobs});
-}
-

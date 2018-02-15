@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Profile</a>
+                <a class="nav-link" href="profile">My Profile</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="bookmarks">Bookmarks<span class="sr-only">(current)</span></a>
@@ -52,6 +52,7 @@
 <!--Bookmarks entries-->
 <div style="margin-top:20px">
 {{#each jobs}}
+{{#if Bookmarked}}
 <a href="/bookmark_jobDesc">
 <div class="media border">
     <div class="media-left">
@@ -65,6 +66,7 @@
     <span class="media-right fa fa-bookmark fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
 </div>
 </a>
+{{/if}}
 {{/each}}
 </div>
 

@@ -8,11 +8,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-dark red lighten-1 mb-4">
@@ -30,13 +30,13 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">My Profile</a>
+                <a class="nav-link" href="profile">My Profile</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="bookmarks">Bookmarks</a>
-            </li>
+	    </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="#">Application History</a>
+                <a class="nav-link" href="appHistory">Application History</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="login">Log In</a>
@@ -51,38 +51,39 @@
 <div class="jobContainer" style="margin-bottom: 100px;"v>
 <div class="media">
 	<div class="media-left">
-		<img src={{job_desc.img}} width="100" height="100">
+		<img src={{job.img}} width="100" height="100">
 	</div>
 	<div class="media-body">
-		<p class="media-heading">{{job_desc.Position}}</p>
-		<p>{{job_desc.Company}}</p>
-		<p>{{job_desc.Location}}</p>
+		<p class="media-heading">{{job.Position}}</p>
+		<p>{{job.Company}}</p>
+		<p>{{job.Location}}</p>
 	</div>
 </div>
 
 <h4>Description</h4>
-<p>{{job_desc.Description}}</p>
+<p>{{job.Description}}</p>
 <h4>Requirements</h4>
 <ul>
-{{#each job_desc.Requirements}}
+{{#each job.Requirements}}
 <li>{{this}}</li>
 {{/each}}
 </ul>
 </div>
 
 <nav class="navbar fixed-bottom" style="background-color: white;margin-top: 20px;">
-	<a class="navbar-brand mx-auto" href="#">Bookmark</a>
+	<a id="bookmarkToggle" class="navbar-brand mx-auto" href="#">{{#if job.Bookmarked}}Unbookmark{{else}}Bookmark{{/if}}</a>
 	<a class="navbar-brand mx-auto" href="#">Apply</a>
 </nav>
 
 <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="../js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/job_desc.js"></script>
 </body>
 </html>

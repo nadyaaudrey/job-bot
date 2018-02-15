@@ -40,9 +40,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="profile">My Profile</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="bookmarks">Bookmarks</a>
-            </li>
+	    </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="appHistory">Application History</a>
             </li>
@@ -64,12 +64,18 @@
 </div>
 
 <!--Filter button-->
-<button type="button" style="margin-top:-15px" class="btn btn-red float-right btn-sm">Filter</button>
+<div class="dropdown">
+<button id="filter-button" data-toggle="dropdown" type="button" style="margin-top:-15px" class="btn btn-red float-right btn-sm dropdown-toggle">Filter</button>
+<div class="dropdown-menu" aria-labelledby="filter-button">
+	<a id="bookmarked-only" class="dropdown-item" href="#">Bookmarked</a>
+	<a id="no-filter" class="dropdown-item" href="#">No Filter</a>
+</div>
+</div>
 
 <!--Jobs entries-->
 <div style="margin-top:50px">
 {{#each jobs}}
-<a href="/job_desc">
+<a href="/job_desc/{{id}}" {{#unless Bookmarked}}class="unbookmarked"{{/unless}}>
 <div class="media border">
 	<div class="media-left">
 		<img src={{img}} width="100" height="100">
@@ -79,7 +85,7 @@
 		<p>{{Company}}</p>
 		<p>{{Location}}</p>
 	</div>
-	<span class="media-right fa fa-bookmark-o fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
+	<span class="media-right fa fa-bookmark{{#unless Bookmarked}}-o{{/unless}} fa-2x" style="margin-right: 50px; margin-top: 50px"></span>
 </div>
 </a>
 {{/each}}
@@ -93,6 +99,7 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
