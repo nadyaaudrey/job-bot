@@ -71,7 +71,7 @@
 </div>
 
 <nav class="navbar fixed-bottom" style="background-color: white;margin-top: 20px;">
-	<a id="bookmarkToggle" class="navbar-brand mx-auto" href="#">{{#if job.Bookmarked}}Unbookmark{{else}}Bookmark{{/if}}</a>
+	<a id="bookmarkToggle" class="navbar-brand mx-auto" href="/addBookmark/{{job.id}}/job_desc">{{#if job.Bookmarked}}Unbookmark{{else}}Bookmark{{/if}}</a>
 	<a class="navbar-brand mx-auto" href="#">Apply</a>
 </nav>
 
@@ -84,6 +84,6 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../js/mdb.min.js"></script>
-    <script type="text/javascript" src="../js/job_desc.js"></script>
+    <!--<script type="text/javascript" src="../js/job_desc.js"></script> -->
 </body>
 </html>
