@@ -1,1 +1,17 @@
-{"Position": "UI Designer", "Company": "Airbnb", "Location": "San Francisco, CA", "img": "https://avatars0.githubusercontent.com/u/698437?s=400&v=4", "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in ligula tristique, aliquam enim nec, auctor risus. Integer ullamcorper odio at risus faucibus finibus. Quisque congue molestie purus, non efficitur felis. Morbi porta enim lacus, in ornare ipsum facilisis vel. Etiam gravida, ligula ut feugiat sagittis, tortor tortor malesuada arcu, non pellentesque ex ipsum faucibus elit. Nunc non rutrum tellus. Ut nisl nibh, ultricies eget interdum et, aliquet ac ante. Nullam volutpat sit amet est quis suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum egestas purus dolor, at malesuada quam blandit sed. Proin ultrices sed elit id maximus. Nam posuere mauris eget tellus euismod, id semper dui pretium. Suspendisse potenti. Maecenas in justo nulla.", "Requirements": ["Degree in the fields of Graphic/Visual Design, Cognitive Science, or HCI", "Proficient using Sketch, Photoshop, or other relevant design tools", "Understands user interface design, heuristic methods, or other usability evaluations"], "Bookmarked": false}
+{"Position": "UI Designer", 
+"Company": "Airbnb", 
+"Location": "San Francisco, CA", 
+"img": "https://avatars0.githubusercontent.com/u/698437?s=400&v=4", 
+"Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in ligula tristique, 
+aliquam enim nec, auctor risus. Integer ullamcorper odio at risus faucibus finibus. Quisque congue 
+molestie purus, non efficitur felis. Morbi porta enim lacus, in ornare ipsum facilisis vel. Etiam 
+gravida, ligula ut feugiat sagittis, tortor tortor malesuada arcu, non pellentesque ex ipsum faucibus 
+elit. Nunc non rutrum tellus. Ut nisl nibh, ultricies eget interdum et, aliquet ac ante. Nullam 
+volutpat sit amet est quis suscipit. Class aptent taciti sociosqu ad litora torquent per conubia 
+nostra, per inceptos himenaeos. Vestibulum egestas purus dolor, at malesuada quam blandit sed. 
+Proin ultrices sed elit id maximus. Nam posuere mauris eget tellus euismod, id semper dui pretium. 
+Suspendisse potenti. Maecenas in justo nulla.", 
+"Requirements": ["Degree in the fields of Graphic/Visual Design, 
+Cognitive Science, or HCI", "Proficient using Sketch, Photoshop, or other relevant design tools", 
+"Understands user interface design, heuristic methods, or other usability evaluations"], 
+"Bookmarked": false}
