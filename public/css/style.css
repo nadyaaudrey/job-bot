@@ -118,3 +118,9 @@
   margin-bottom: 50px;
 }
 
+.middle {
+    display: inline-block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
