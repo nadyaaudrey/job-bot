@@ -17,6 +17,7 @@ var appHistory = require('./routes/appHistory');
 var appHistory_jobDesc = require('./routes/appHistory_jobDesc');
 var profile = require('./routes/profile');
 var addBookmark = require('./routes/addBookmark');
+var landing = require('./routes/landing');
 // Example route
 // var user = require('./routes/user');
 
@@ -42,7 +43,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', landing.view);
+app.get('/index', index.view);
 app.get('/job_desc/:jobid', job_desc.view);
 app.get('/login', login.view);
 app.get('/bookmarks', bookmarks.view);
