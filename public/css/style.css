@@ -123,3 +123,8 @@
     margin-left: 50%;
     transform: translateX(-50%);
 }
+
+#basic-addon1{
+  width: 25px;
+  text-align: center;
+}
