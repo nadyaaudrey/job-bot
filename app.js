@@ -45,6 +45,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', landing.view);
 app.get('/index', index.view);
+app.get('/index/:search_param', index.view_search);
 app.get('/job_desc/:jobid', job_desc.view);
 app.get('/login', login.view);
 app.get('/bookmarks', bookmarks.view);

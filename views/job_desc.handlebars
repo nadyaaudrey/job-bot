@@ -16,7 +16,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark red lighten-1 mb-4">
-<a href="/" class="fa fa-angle-left fa-3x" style="color: #ffffff"></a>
+<a href="/index" class="fa fa-angle-left fa-3x" style="color: #ffffff"></a>
  <div class="middle"><a class="navbar-brand mx-auto" href="#">Job Description</a></div>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23" aria-controls="navbarSupportedContent23"
         aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon3"><span></span><span></span><span></span><span></span></div></button>
@@ -27,7 +27,7 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="profile">My Profile</a>
@@ -51,23 +51,25 @@
 <div class="jobContainer" style="margin-bottom: 100px;"v>
 <div class="media">
 	<div class="media-left">
-		<img src={{job.img}} width="100" height="100">
+		<img src={{job.company_logo}} width="100" height="100">
 	</div>
 	<div class="media-body">
-		<p class="media-heading">{{job.Position}}</p>
-		<p>{{job.Company}}</p>
-		<p>{{job.Location}}</p>
+		<p class="media-heading">{{job.title}}</p>
+		<p>{{job.company}}</p>
+		<p>{{job.location}}</p>
 	</div>
 </div>
 
-<h4>Description</h4>
-<p>{{job.Description}}</p>
-<h4>Requirements</h4>
+<!--<h4>Description</h4>-->
+<p>{{{job.description}}}</p>
+<!--
+	<h4>Requirements</h4>
 <ul>
 {{#each job.Requirements}}
 <li>{{this}}</li>
 {{/each}}
-</ul>
+</ul> 
+-->
 </div>
 
 <nav class="navbar fixed-bottom" style="background-color: white;margin-top: 20px;">
