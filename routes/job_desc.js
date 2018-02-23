@@ -35,7 +35,7 @@ var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL |
 			job.Bookmarked = true;
 		}
 	    }
-	        console.log(job);
+		    console.log(job.job_url);
 		    res.render('job_desc', {job});
 	    });
     }).on("error", (err) => {

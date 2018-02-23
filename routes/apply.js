@@ -19,6 +19,8 @@ exports.view = async function(req, res) {
         else {
 	    res.redirect(req.body.joburl);
 	}
+	console.log("test");
+	console.log(req.body.joburl);
 	var uinfo = await getAsync(user);
 	var uApps = JSON.parse(uinfo).applications;
 	if(uApps.indexOf(req.body.jobid) == -1) {
