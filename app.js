@@ -19,6 +19,7 @@ var appHistory_jobDesc = require('./routes/appHistory_jobDesc');
 var profile = require('./routes/profile');
 var addBookmark = require('./routes/addBookmark');
 var landing = require('./routes/landing');
+var apply = require('./routes/apply');
 // Example route
 // var user = require('./routes/user');
 
@@ -59,6 +60,7 @@ app.get('/appHistory', appHistory.view);
 app.get('/appHistory_jobDesc', appHistory_jobDesc.view);
 app.get('/profile', profile.view);
 app.get('/addBookmark/:jobid/:prevPage', addBookmark.view);
+app.post('/apply', apply.view);
 // Example route
 // app.get('/users', user.list);
 

@@ -27,19 +27,19 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="profile">My Profile</a>
+                <a class="nav-link" href="/profile">My Profile</a>
             </li>
             <!--<li class="nav-item">
                 <a class="nav-link" href="bookmarks">Bookmarks</a>
 	    </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="appHistory">Application History</a>
+                <a class="nav-link" href="/appHistory">Application History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login">Log In</a>
+                <a class="nav-link" href="/login">Log In</a>
             </li>
         </ul>
         <!-- Links -->
@@ -62,6 +62,9 @@
 
 <!--<h4>Description</h4>-->
 <p>{{{job.description}}}</p>
+
+<p id="job_url" hidden>{{job.job_url}}</p>
+<p id="job_id" hidden>{{job.id}}</p>
 <!--
 	<h4>Requirements</h4>
 <ul>
@@ -74,7 +77,7 @@
 
 <nav class="navbar fixed-bottom" style="background-color: white;margin-top: 20px;">
 	<a id="bookmarkToggle" class="navbar-brand mx-auto" href="/addBookmark/{{job.id}}/job_desc">{{#if job.Bookmarked}}Unbookmark{{else}}Bookmark{{/if}}</a>
-	<a class="navbar-brand mx-auto" href="#">Apply</a>
+	<a id="applyButton" class="navbar-brand mx-auto" href="#">Apply</a>
 </nav>
 
 <!-- SCRIPTS -->
@@ -86,6 +89,6 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../js/mdb.min.js"></script>
-    <!--<script type="text/javascript" src="../js/job_desc.js"></script> -->
+    <script type="text/javascript" src="../js/job_desc.js"></script> 
 </body>
 </html>
