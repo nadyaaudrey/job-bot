@@ -14,6 +14,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -90,7 +91,9 @@
 
                 <div class="row my-3 d-flex justify-content-center">
                     <!--Facebook-->
-                    <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fa fa-facebook blue-text text-center"></i></button>
+		    <!--<fb:login-button scope="email" onlogin="checkLoginState();">
+		    </fb:login-button> -->
+		    <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a" onclick="fb_login();"><i class="fa fa-facebook blue-text text-center"></i></button>
                    
                     <!--Google +-->
                     <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fa fa-google-plus blue-text"></i></button>
@@ -117,6 +120,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="/js/mdb.min.js"></script>
     <script type="text/javascript" src="/js/login.js"></script>
+    {{> facebook}}
+    <script type="text/javascript" src="/js/facebook.js"></script>
 </body>
 
 </html>

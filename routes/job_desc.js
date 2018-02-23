@@ -1,5 +1,22 @@
-exports.view = function(req, res) {
+exports.view = async function(req, res) {
     var https = require('https');
+    const {promisify} = require('util');
+var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL || 6379);
+    const getAsync = promisify(client.get).bind(client);
+    const setAsync = promisify(client.set).bind(client);
+    var logged_in = false;
+    var user = req.cookies.user;
+    if(user != undefined) {
+        console.log(user);
+        logged_in = true;
+        var userInfo = await getAsync(user);
+        console.log(userInfo);
+        if(!userInfo) {
+            console.log("Generating user info!");
+            await setAsync(user, JSON.stringify({'bookmarks': [], 'applications': []}));
+            console.log(await getAsync(user));
+        }
+    }
     var job_id = req.params.jobid;
     https.get('https://jobs.github.com/positions/' + job_id + '.json', (resp) => {
 	    let data = "";
@@ -8,9 +25,17 @@ exports.view = function(req, res) {
 		    data += chunk;
 	    });
 
-	    resp.on('end', () => {
-		    var job = JSON.parse(data);
-		    console.log(job);
+	    resp.on('end', async () => {
+	        var job = JSON.parse(data);
+            if(logged_in) {
+	        var uinfo = await getAsync(user);
+	        var bookmarks = JSON.parse(uinfo).bookmarks;
+	        console.log(bookmarks);
+		if(bookmarks.indexOf(job.id) > -1) {
+			job.Bookmarked = true;
+		}
+	    }
+	        console.log(job);
 		    res.render('job_desc', {job});
 	    });
     }).on("error", (err) => {
