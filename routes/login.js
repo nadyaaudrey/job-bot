@@ -13,8 +13,8 @@ exports.check_login = function(req, res) {
     
     client.connect();
 
-    var email = request.body.email;
-    var password = request.body.pass;
+    var email = req.body.email;
+    var password = req.body.pass;
 
     var queryString = "SELECT email FROM users WHERE email = '" + email + "' AND password = '" + password + "';";
     
