@@ -4,9 +4,10 @@ exports.view = function(req, res) {
 
 exports.check_login = function(req, res) {
     const { Client } = require('pg');
+    var dbString = "postgres://kkhlblwfxlsomu:64e7ceb13ab96abb7f43092a9f28416916a8e601fa7376023bf47231df08ac01@ec2-184-73-202-79.compute-1.amazonaws.com:5432/d829ct2999j86l"
     console.log(process.env.DATABASE_URL);
     const client = new Client({
-	connectionString: process.env.DATABASE_URL,
+	connectionString: dbString,
 	ssl: true,
     });
     
