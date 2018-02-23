@@ -14,7 +14,7 @@ exports.check_login = function(req, res) {
     var email = request.body.email;
     var password = request.body.pass;
 
-    var queryString = "SELECT email FROM user WHERE email = '" + email + "' AND password = '" + password + "';";
+    var queryString = "SELECT email FROM users WHERE email = '" + email + "' AND password = '" + password + "';";
     
     client.query(queryString, (err, res) => {
         if(err) throw err;
