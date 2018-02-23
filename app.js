@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var job_desc = require('./routes/job_desc');
