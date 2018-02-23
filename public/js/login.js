@@ -14,6 +14,7 @@ function checkCred(e) {
                 return;
         }
         $.post("/login", {'email': email, 'pass': pass}, function(result) {
+		console.log(result);
                if(result.login_status) {
                    sessionStorage.user = email;
                    window.location.replace("/index");

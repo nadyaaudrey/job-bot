@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	initializePage();
-	console.log("Page initialized!");
 })
 
 function initializePage() {
