@@ -37,6 +37,9 @@ app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({
+        extended: true
+}));
 
 // development only
 if ('development' == app.get('env')) {
@@ -48,6 +51,7 @@ app.get('/index', index.view);
 app.get('/index/:search_param', index.view_search);
 app.get('/job_desc/:jobid', job_desc.view);
 app.get('/login', login.view);
+app.post('/login', login.check_login);
 app.get('/bookmarks', bookmarks.view);
 app.get('/bookmark_jobDesc', bookmark_jobDesc.view);
 app.get('/appHistory', appHistory.view);

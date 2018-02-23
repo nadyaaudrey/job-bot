@@ -16,6 +16,7 @@
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "pg": "7.4.1",
     "redis": "^2.8.0"
   },
   "engines": {
