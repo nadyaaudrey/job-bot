@@ -133,3 +133,7 @@
 input.form-control {
   padding: 20px;
 }
+
+.media-heading{
+  font-weight: bold;
+}
