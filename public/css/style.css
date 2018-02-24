@@ -128,3 +128,8 @@
   width: 25px;
   text-align: center;
 }
+
+/*search bar*/
+input.form-control {
+  padding: 20px;
+}
