@@ -4,7 +4,7 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-	$("#bookmarkToggle").click(toggleBookmark);
+	//$("#bookmarkToggle").click(toggleBookmark);
 	$("#applyButton").click(applyReq);
 }
 

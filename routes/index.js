@@ -44,17 +44,20 @@ exports.view = async function(req, res) {
 	    console.log("Error: " + err.message);
     });
 }
-exports.view_search = function(req, res) {
+exports.view_search = async function(req, res) {
     var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL || 6379);
     var search_param = req.params.search_param;
     var https = require('https');
+    const {promisify} = require('util');
+    const getAsync = promisify(client.get).bind(client);
+    const setAsync = promisify(client.set).bind(client);
     var logged_in = false;
     var user = req.cookies.user
     if(user) {
 	    logged_in = true;
 	    var userInfo = client.get(user);
 	    if(!userInfo) {
-		    client.set(user, {'bookmarks': [], 'applications': []});
+		    await setAsync(user, JSON.stringify({'bookmarks': [], 'applications': []}));
 	    }
     }
     https.get('https://jobs.github.com/positions.json?description=' + search_param + '&page=0', (resp) => {
@@ -64,11 +67,11 @@ exports.view_search = function(req, res) {
 		    data += chunk;
 	    });
 
-	    resp.on('end', () => {
+	    resp.on('end', async () => {
 		    var jobs = JSON.parse(data);
                     if(logged_in) {
 			    for(job in jobs) {
-				    if(job.id in client.get(user).bookmarks) {
+				    if(job.id in JSON.parse(getAsync(user)).bookmarks) {
 					    job.Bookmarked = true;
 				    }
 			    }
