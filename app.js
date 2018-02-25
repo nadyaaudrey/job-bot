@@ -20,7 +20,6 @@ var profile = require('./routes/profile');
 var addBookmark = require('./routes/addBookmark');
 var landing = require('./routes/landing');
 var apply = require('./routes/apply');
-var privacypolicy = require('./routes/privacypolicy');
 // Example route
 // var user = require('./routes/user');
 
