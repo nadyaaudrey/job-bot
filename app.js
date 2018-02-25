@@ -61,7 +61,6 @@ app.get('/appHistory_jobDesc', appHistory_jobDesc.view);
 app.get('/profile', profile.view);
 app.get('/addBookmark/:jobid/:prevPage', addBookmark.view);
 app.post('/apply', apply.view);
-app.get('/privacypolicy', privacypolicy.view);
 // Example route
 // app.get('/users', user.list);
 
