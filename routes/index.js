@@ -55,10 +55,13 @@ exports.view_search = async function(req, res) {
     var user = req.cookies.user
     if(user) {
 	    logged_in = true;
-	    var userInfo = client.get(user);
+	    var userInfo = await getAsync(user);
 	    if(!userInfo) {
+		    console.log(userInfo)
 		    await setAsync(user, JSON.stringify({'bookmarks': [], 'applications': []}));
+		    console.log(await getAsync(user));
 	    }
+	    console.log(user);
     }
     https.get('https://jobs.github.com/positions.json?description=' + search_param + '&page=0', (resp) => {
 	    let data = "";
@@ -71,7 +74,7 @@ exports.view_search = async function(req, res) {
 		    var jobs = JSON.parse(data);
                     if(logged_in) {
 			    for(job in jobs) {
-				    if(job.id in JSON.parse(getAsync(user)).bookmarks) {
+				    if(job.id in JSON.parse(await getAsync(user)).bookmarks) {
 					    job.Bookmarked = true;
 				    }
 			    }
