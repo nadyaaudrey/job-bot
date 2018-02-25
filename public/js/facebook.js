@@ -14,6 +14,9 @@ function statusChangeCallback(response) {
 				document.cookie = "user=" + response.email;
 				window.location.replace('/index');
 				console.log(sessionStorage.getItem('user'));
-			});
+			}, changeUser);
 	}
+}
+function changeUser(response){
+  $("#photo").attr("src", response.picture.data.url);
 }
