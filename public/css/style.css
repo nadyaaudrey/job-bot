@@ -130,7 +130,7 @@
 }
 
 /*search bar*/
-input.form-control {
+#searchBox{
   padding: 20px;
 }
 
