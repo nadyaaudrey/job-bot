@@ -30,10 +30,8 @@ exports.view = async function(req, res) {
 		    if(logged_in) {
 			    var uinfo = await getAsync(user);
 			    var bookmarks = JSON.parse(uinfo).bookmarks;
-			    console.log(bookmarks);
 			    for(job in jobs) {
 				    if(bookmarks.indexOf(jobs[job].id) > -1) {
-					    console.log(job);
 					    jobs[job].Bookmarked = true;
 				    }
 			    }
