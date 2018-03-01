@@ -16,10 +16,9 @@ exports.view = async function(req, res) {
     }
     else {
         if(req.params.prevPage === "index") {
-            res.redirect('/');
+            res.redirect('/index');
         }
         else {
-	    var job = jobs[req.params.jobid];
 	    res.redirect('/job_desc/' + req.params.jobid);
         }
     }
@@ -38,7 +37,7 @@ exports.view = async function(req, res) {
     await setAsync(user, JSON.stringify({'bookmarks': bookmarks, 'applications': JSON.parse(await getAsync(user)).applications}));
 
     if(req.params.prevPage === "index") {
-        res.redirect('/');
+        res.redirect('/index');
     }
     else {
 	res.redirect('/job_desc/' + req.params.jobid);
