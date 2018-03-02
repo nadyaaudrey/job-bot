@@ -1,4 +1,4 @@
-exports.view = async function(req, res) {
+exports.bookmark = async function(req, res) {
     var user = req.cookies.user
     var logged_in = false;
     var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL || 6379);
@@ -15,31 +15,21 @@ exports.view = async function(req, res) {
 	    }
     }
     else {
-        if(req.params.prevPage === "index") {
-            res.redirect('/index');
-        }
-        else {
-	    res.redirect('/job_desc/' + req.params.jobid);
-        }
+	    res.send({'success': false});
     }
     
     var bookmarks = JSON.parse(await getAsync(user)).bookmarks;
-    if(bookmarks.indexOf(req.params.jobid) > -1) {
-        const index = bookmarks.indexOf(req.params.jobid);
+    if(bookmarks.indexOf(req.body.jobid) > -1) {
+        const index = bookmarks.indexOf(req.body.jobid);
 	if(index !== -1) {
 		bookmarks.splice(index, 1);
 	}
     }
     else {
-	bookmarks.push(req.params.jobid);
+	bookmarks.push(req.body.jobid);
     }
 
     await setAsync(user, JSON.stringify({'bookmarks': bookmarks, 'applications': JSON.parse(await getAsync(user)).applications}));
 
-    if(req.params.prevPage === "index") {
-        res.redirect('/index');
-    }
-    else {
-	res.redirect('/job_desc/' + req.params.jobid);
-    }
+    res.send({'success': true});
 }

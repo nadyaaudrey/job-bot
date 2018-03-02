@@ -6,6 +6,7 @@ function initializePage() {
 	$("#bookmarked-only").click(hideNonBookmarked);
 	$("#no-filter").click(showNonBookmarked);
 	$("#basic-addon1").click(search);
+	$(".bookmarkIcon").click(bookmark);
 }
 
 function hideNonBookmarked(e) {
@@ -51,4 +52,25 @@ function search(e) {
 		*/
 		window.location.replace('/index/' + search_param);
 	}
-}	
+}
+
+function bookmark(e) {
+    e.preventDefault();
+    var jobid = $(this).attr('id');
+    $.post('/addBookmark', {'jobid': $(this).attr('id')}, function(data) {
+	    if(data.success) {
+		    var icon = $('#' + jobid)
+		    if(icon.hasClass('fa-bookmark-o')) {
+		        icon.addClass('fa-bookmark').removeClass('fa-bookmark-o');
+			alert("Bookmark successfully added!");
+		    }
+	            else {
+			icon.addClass('fa-bookmark-o').removeClass('fa-bookmark');
+			alert("Bookmark successfully removed!");
+		    }
+	    }
+            else {
+		    alert("User must be logged in to add bookmarks.");
+	    }
+	});
+}
