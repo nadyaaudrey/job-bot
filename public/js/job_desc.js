@@ -40,5 +40,5 @@ function applyReq(e) {
 
 function goBack(e) {
 	e.preventDefault();
-	window.history.back();
+	window.location = document.referrer;
 }
