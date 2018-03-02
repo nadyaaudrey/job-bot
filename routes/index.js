@@ -71,9 +71,11 @@ exports.view_search = async function(req, res) {
 	    resp.on('end', async () => {
 		    var jobs = JSON.parse(data);
                     if(logged_in) {
+			var uinfo = await getAsync(user);
+			var bookmarks = JSON.parse(uinfo).bookmarks;
 			    for(job in jobs) {
-				    if(job.id in JSON.parse(await getAsync(user)).bookmarks) {
-					    job.Bookmarked = true;
+				    if(bookmarks.indexOf(jobs[job].id) > -1) {
+					    jobs[job].Bookmarked = true;
 				    }
 			    }
 		    }
