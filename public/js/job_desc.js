@@ -6,6 +6,7 @@ $(document).ready(function() {
 function initializePage() {
 	//$("#bookmarkToggle").click(toggleBookmark);
 	$("#applyButton").click(applyReq);
+	$("#backButton").click(goBack);
 }
 
 function toggleBookmark(e) {
@@ -24,4 +25,9 @@ function applyReq(e) {
 	var joburl = $("#job_url").text();
 	$.post('/apply/', {'jobid': jobid, 'joburl': joburl});
 	window.location.replace(joburl);
+}
+
+function goBack(e) {
+	e.preventDefault();
+	window.history.back();
 }
