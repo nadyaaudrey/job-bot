@@ -7,15 +7,19 @@ function initializePage() {
 	$("#no-filter").click(showNonBookmarked);
 	$("#basic-addon1").click(search);
 	$(".bookmarkIcon").click(bookmark);
+	$(".job_posting").click(recordJobClick);
+	$("#filter-button").click(recordFilterClick);
 }
 
 function hideNonBookmarked(e) {
 	e.preventDefault();
+	gtag('event', 'click', {'event_category': 'filterOption'});
 	$(".unbookmarked").hide();
 }
 
 function showNonBookmarked(e) {
 	e.preventDefault();
+	gtag('event', 'click', {'event_category': 'filterOption'});
 	$(".unbookmarked").show();
 }
 
@@ -56,6 +60,7 @@ function search(e) {
 
 function bookmark(e) {
     e.preventDefault();
+    gtag('event', 'click', {'event_category': 'Bookmark'});
     var jobid = $(this).attr('id');
     $.post('/addBookmark', {'jobid': $(this).attr('id')}, function(data) {
 	    if(data.success) {
@@ -73,4 +78,12 @@ function bookmark(e) {
 		    alert("User must be logged in to add bookmarks.");
 	    }
 	});
+}
+
+function recordJobClick(e) {
+    gtag('event', 'click', {'event_category': 'Job Posting'});
+}
+
+function recordFilterClick(e) {
+    gtag('event', 'click', {'event_category': 'Filter Button'});
 }
