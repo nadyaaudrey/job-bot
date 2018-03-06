@@ -9,6 +9,7 @@ function initializePage() {
 	$(".bookmarkIcon").click(bookmark);
 	$(".job_posting").click(recordJobClick);
 	$("#filter-button").click(recordFilterClick);
+	$(".unclickableBookmarkIcon").click(bookmarkClick);
 }
 
 function hideNonBookmarked(e) {
@@ -86,4 +87,8 @@ function recordJobClick(e) {
 
 function recordFilterClick(e) {
     gtag('event', 'click', {'event_category': 'Filter Button'});
+}
+
+function bookmarkClick(e) {
+    gtag('event', 'click', {'event_category': 'Bookmark'});
 }
