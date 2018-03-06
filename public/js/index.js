@@ -76,7 +76,7 @@ function bookmark(e) {
 		    }
 	    }
             else {
-		    alert("User must be logged in to add bookmarks.");
+		    alert("User must be logged in to add bookmarks. Please use the Facebook login!");
 	    }
 	});
 }
