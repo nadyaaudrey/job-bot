@@ -51,6 +51,7 @@ exports.view = async function(req, res) {
 			jobs[value].status = statuses[jobs[value].id];
 		}
 		console.log(jobs);
+		client.quit();
 		res.render('appHistory', {jobs});
 	});
 	//console.log(jobs);

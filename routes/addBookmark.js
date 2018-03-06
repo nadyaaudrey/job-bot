@@ -30,6 +30,6 @@ exports.bookmark = async function(req, res) {
     }
 
     await setAsync(user, JSON.stringify({'bookmarks': bookmarks, 'applications': JSON.parse(await getAsync(user)).applications}));
-
+    client.quit();
     res.send({'success': true});
 }

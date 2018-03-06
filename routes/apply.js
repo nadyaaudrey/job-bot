@@ -27,6 +27,8 @@ exports.view = async function(req, res) {
 	    uApps.push({'id': req.body.jobid, 'status': 'pending'});
 	    await setAsync(user, JSON.stringify({'bookmarks': JSON.parse(uinfo).bookmarks, 'applications': uApps}));
 	}
+	client.quit();
 	res.end('Success!');
+
 	res.redirect(req.body.joburl);
 }

@@ -19,9 +19,11 @@ exports.view = async function(req, res) {
 	if(logged_in) {
 		console.log(req.cookies.name);
 		console.log(req.cookies.profile_pic);
+		client.quit();
 		res.render('profile', {'name': req.cookies.name, 'img': req.cookies.profile_pic});
 	}
 	else {
+		client.quit();
 		res.render('profile', {'name': 'Your Name Here', 'img': 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'});
 	}
 }

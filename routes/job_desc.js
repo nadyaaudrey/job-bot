@@ -36,9 +36,11 @@ var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL |
 		}
 	    }
 		    console.log(job.job_url);
+		    client.quit();
 		    res.render('job_desc', {job});
 	    });
     }).on("error", (err) => {
+	    client.quit();
 	    console.log("Error: " + err.message);
     });
 	/*

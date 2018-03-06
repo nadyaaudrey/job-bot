@@ -37,8 +37,10 @@ exports.view = async function(req, res) {
 			    }
 		    }
 		    res.render('index', {jobs});
+		    client.quit();
 	    });
     }).on("error", (err) => {
+	    client.quit();
 	    console.log("Error: " + err.message);
     });
 }
@@ -79,9 +81,11 @@ exports.view_search = async function(req, res) {
 				    }
 			    }
 		    }
+		    client.quit();
 		    res.render('index', {jobs});
 	    });
     }).on("error", (err) => {
+	    client.quit();
 	    console.log("Error: " + err.message);
     });
 }
@@ -124,9 +128,11 @@ exports.viewAlt = async function(req, res) {
 				    }
 			    }
 		    }
+		    client.quit();
 		    res.render('index', {jobs, 'viewAlt': true});
 	    });
     }).on("error", (err) => {
+	    client.quit();
 	    console.log("Error: " + err.message);
     });
 }
