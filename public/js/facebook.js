@@ -9,7 +9,7 @@ function checkLoginState() {
 
 function statusChangeCallback(response) {
 	if(response.status ===  'connected') {
-		FB.api('/me?fields=name,picture.width(480),email',
+		FB.api('/me?fields=name,picture.width(250),email',
 			function(response) {
 				document.cookie = "user=" + response.id;
 				document.cookie = "name=" + response.name;  
