@@ -10,6 +10,7 @@ function initializePage() {
 	$(".job_posting").click(recordJobClick);
 	$("#filter-button").click(recordFilterClick);
 	$(".unclickableBookmarkIcon").click(bookmarkClick);
+        $("#logoutButton").click(logout);
 }
 
 function hideNonBookmarked(e) {
@@ -65,12 +66,15 @@ function bookmark(e) {
     var jobid = $(this).attr('id');
     $.post('/addBookmark', {'jobid': $(this).attr('id')}, function(data) {
 	    if(data.success) {
-		    var icon = $('#' + jobid)
+		    var icon = $('#' + jobid);
+		    var card = $('#card-' + jobid);
 		    if(icon.hasClass('fa-bookmark-o')) {
 		        icon.addClass('fa-bookmark').removeClass('fa-bookmark-o');
+			card.removeClass('unbookmarked');
 			alert("Bookmark successfully added!");
 		    }
 	            else {
+			card.addClass('unbookmarked');
 			icon.addClass('fa-bookmark-o').removeClass('fa-bookmark');
 			alert("Bookmark successfully removed!");
 		    }

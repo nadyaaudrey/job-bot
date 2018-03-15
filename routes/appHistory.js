@@ -52,7 +52,7 @@ exports.view = async function(req, res) {
 		}
 		console.log(jobs);
 		client.quit();
-		res.render('appHistory', {jobs});
+		res.render('appHistory', {jobs, 'logged_in': logged_in});
 	});
 	//console.log(jobs);
 	//res.render('appHistory', {jobs});

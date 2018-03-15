@@ -36,7 +36,7 @@ exports.view = async function(req, res) {
 				    }
 			    }
 		    }
-		    res.render('index', {jobs});
+		    res.render('index', {jobs, 'logged_in': logged_in});
 		    client.quit();
 	    });
     }).on("error", (err) => {
@@ -82,7 +82,7 @@ exports.view_search = async function(req, res) {
 			    }
 		    }
 		    client.quit();
-		    res.render('index', {jobs});
+		    res.render('index', {jobs, 'logged_in': logged_in, 'viewAlt': true});
 	    });
     }).on("error", (err) => {
 	    client.quit();
@@ -129,7 +129,7 @@ exports.viewAlt = async function(req, res) {
 			    }
 		    }
 		    client.quit();
-		    res.render('index', {jobs, 'viewAlt': true});
+		    res.render('index', {jobs, 'viewAlt': true, 'logged_in': logged_in});
 	    });
     }).on("error", (err) => {
 	    client.quit();

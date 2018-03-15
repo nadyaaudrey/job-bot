@@ -20,6 +20,7 @@ var profile = require('./routes/profile');
 var addBookmark = require('./routes/addBookmark');
 var landing = require('./routes/landing');
 var apply = require('./routes/apply');
+var logout = require('./routes/logout');
 // Example route
 // var user = require('./routes/user');
 
@@ -49,9 +50,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', landing.view);
-app.get('/index', index.view);
+app.get('/index', index.viewAlt);
 app.get('/index/:search_param', index.view_search);
-app.get('/indexAlt', index.viewAlt);
 app.get('/job_desc/:jobid', job_desc.view);
 app.get('/login', login.view);
 app.post('/login', login.check_login);
@@ -62,6 +62,7 @@ app.get('/appHistory_jobDesc', appHistory_jobDesc.view);
 app.get('/profile', profile.view);
 app.post('/addBookmark', addBookmark.bookmark);
 app.post('/apply', apply.view);
+app.post('/logout', logout.logout);
 // Example route
 // app.get('/users', user.list);
 

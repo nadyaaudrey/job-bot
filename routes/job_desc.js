@@ -37,7 +37,7 @@ var redis= require("redis"), client = redis.createClient(process.env.REDIS_URL |
 	    }
 		    console.log(job.job_url);
 		    client.quit();
-		    res.render('job_desc', {job});
+		    res.render('job_desc', {job, 'logged_in': logged_in});
 	    });
     }).on("error", (err) => {
 	    client.quit();

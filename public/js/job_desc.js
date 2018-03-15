@@ -7,6 +7,7 @@ function initializePage() {
 	$("#bookmarkToggle").click(toggleBookmark);
 	$("#applyButton").click(applyReq);
 	$("#backButton").click(goBack);
+        $("#logoutButton").click(logout);
 }
 
 function toggleBookmark(e) {
